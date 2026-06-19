@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BACKPACK MOON - Online Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3" href="#">🎒 BACKPACK MOON</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#school">School</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#party">Party</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shopping">Shopping</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#casual">Casual</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#travel">Travel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="hero container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>SMART <span class="highlight">BACKPACK</span> COLLECTION</h1>
+                    <p>Premium backpacks for students, travelers, professionals and fashion lovers.</p>
+                    <button class="btn btn-success btn-lg" onclick="openBuy('Premium Backpack',120)">Buy Now</button>
+                </div>
+                <div class="col-md-6"><img class="img-fluid" src="Photos/Bag-1-main.png"></div>
+            </div>
+        </section>
+    </header>
+
+    <main class="container">
+        <section class="row g-4 my-5">
+            <div class="col-md-4">
+                <div class="feature">
+                    <h4>✓ Durable Material</h4>
+                    <p>Water resistant fabric and strong stitching.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <h4>✓ Fast Delivery</h4>
+                    <p>Delivery available across Bangladesh.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <h4>✓ Easy Return</h4>
+                    <p>7 days replacement support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <h2 class="my-5 text-center">PRODUCT CATEGORIES</h2>
+            <div class="row g-4">
+
+                <h2 id="school" class="mt-5"> School Bags</h2>
+                <div class="row g-4" id="schoolList"></div>
+
+                <h2 id="party" class="mt-5"> Party Bags</h2>
+                <div class="row g-4" id="partyList"></div>
+
+                <h2 id="shopping" class="mt-5"> Shopping Bags</h2>
+                <div class="row g-4" id="shoppingList"></div>
+
+                <h2 id="casual"> Casual Bags</h2>
+                <div class="row g-4" id="casualList"></div>
+
+                <h2 id="travel" class="mt-5"> Travel Bags</h2>
+                <div class="row g-4" id="travelList"></div>
+
+            </div>
+        </section>
+
+        <h2 class="mt-5 text-center">Special Categories</h2>
+        <div class="row g-4 my-5">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h4 id="school">School Bags</h4>
+                    <p>Comfortable backpacks for students.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h4 id="party">Party Bags</h4>
+                    <p>Stylish bags for events and occasions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h4 id="shopping">Shopping Bags</h4>
+                    <p>Reusable eco-friendly shopping bags.</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="contact" class="my-5">
+            <h2 class="mt-5 text-center">Contact & Payment</h2>
+            <div class="row g-4 my-5">
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h4 id="school">Contact</h4>
+                        <p> Head Office: 001, Dhaka, Bangladesh - 1000 </p>
+                        <p> +880 1700-000000 </p>
+                        <p> Local Office: House: 12, Road: 12, Sector: 10, Uttara, Dhaka-1200 </p>
+                        <p>+880 1700-000000</p>
+                        <p> Help line: +88005656 9090 </p>
+                        <p>+88005656 9090</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h4 id="party">We Accepte</h4><img src="Photos/cod.jpg" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4 class="my-5">Find Us on Map</h4>
+                <iframe src="https://www.google.com/maps?q=Dhaka,Bangladesh+1000&output=embed" width="100%" height="350"
+                    style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="buyModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Complete Order</h5>
+                </div>
+                <div class="modal-body">
+                    <h6 id="productName"></h6>
+                    <label>Quantity</label><input id="qty" class="form-control" type="number" min="1" value="1">
+                    <label class="mt-2">Delivery Location</label>
+                    <select class="form-control">
+                        <option>Dhaka</option>
+                        <option>Chattogram</option>
+                        <option>Rajshahi</option>
+                        <option>Sylhet</option>
+                        <option>Khulna</option>
+                    </select>
+                    <label class="mt-2">Payment Method</label>
+                    <select class="form-control">
+                        <option>Cash on Delivery</option>
+                        <option>bKash</option>
+                        <option>Nagad</option>
+                        <option>Visa/Master Card</option>
+                    </select>
+                    <button class="btn btn-success mt-3 w-100">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <h3>BACKPACK MOON</h3>
+        <p>Quality backpacks for every lifestyle.</p>
+        <p><a href="">Facebook</a> | <a href="">Instagram</a> | <a href="">YouTube</a> | <a href="">TikTok</a></p>
+        <small>© 2026 Backpack Moon. All Rights Reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let casual = [
+            ['Daily Casual Bag', 'Photos/bag-9.jpg', 150], ['Daily Casual Bag', 'Photos/bag-7.jpg', 130], ['Daily Casual Bag', 'Photos/bag-8.jpg', 110],
+            ['Daily Casual Bag', 'Photos/bag-4.jpg', 80], ['Daily Casual Bag', 'Photos/bag-5.jpg', 120], ['Daily Casual Bag', 'Photos/bag-6.jpg', 70], ['Daily Casual Bag', 'Photos/bag-7.jpg', 130], ['Daily Casual Bag', 'Photos/bag-8.jpg', 110], ['Daily Casual Bag', 'Photos/bag-9.jpg', 150], ['Daily Casual Bag', 'Photos/bag-10.jpg', 190]];
+        let travel = [
+            ['Travel Sport', 'Photos/Travel-bag-5.jpg', 200], ['Explorer Bag', 'Photos/Travel-bag-2.png', 180], ['Hiking Trek Bag', 'Photos/Treavel-bag-3.png', 200],
+            ['Adventure Travel Bag', 'Photos/Travel-bag-4.jpg', 170], ['Travel Sport', 'Photos/Travel-bag-6.jpg', 200], ['Travel Sport', 'Photos/Travel-bag-5.jpg', 230], ['Travel Sport', 'Photos/Travel-bag-7.jpg', 110], ['Travel Sport', 'Photos/Travel-bag-8.jpg', 80], ['Travel Sport', 'Photos/Travel-bag-9.jpg', 250], ['Travel Sport', 'Photos/Travel-bag-10.jpg', 240]];
+        let school = [
+            ['Student Classic', 'Photos/scbags1.png', 200], ['Kids Color Bag', 'Photos/scbags2.png', 180], ['Waterproof Student Bag', 'Photos/scbags3.jpg', 200],
+            ['Junior Backpack', 'Photos/scbags4.jpg', 170], ['Smart School Pack', 'Photos/scbag5.jpg', 200], ['Premium School Bag', 'Photos/scbag6.jpg', 230], ['Travel Sport', 'Photos/scbag7.jpg', 110], ['Premium School Bag', 'Photos/scbag8.jpg', 80], ['Waterproof Student Bag', 'Photos/scbag9.jpg', 250], ['Junior Backpack', 'Photos/scbag10.jpg', 240]];
+        let party = [
+            ['Elegant Party Bags', 'Photos/pb1.jpg', 1000], ['Fashion Clutch Bag', 'Photos/pb2.jpg', 1800], ['Evening Style Bag', 'Photos/pb3.jpg', 2200],
+            ['Luxury Mini Bag', 'Photos/pb4.jpg', 1750], ['Classic Event Bag', 'Photos/pb5.jpg', 1200], ['Women Fashion Bag', 'Photos/pb6.jpg', 1230], ['Golden Party Bag', 'Photos/pb7.jpg', 1100], ['Modern Celebration Bag', 'Photos/pb8.jpg', 800], ['Designer Party Bag', 'Photos/pb9.jpg', 1250], ['Modern Celebration Bag', 'Photos/pb10.jpg', 2240]];
+        let shopping = [
+            ['Eco Shopping Bag', 'Photos/sop1.jpg', 100], ['Reusable Market Bag', 'Photos/sop2.jpg', 200], ['Evening Style Bag', 'Photos/sop3.jpg', 220],
+            ['Luxury Mini Bag', 'Photos/sop4.jpg', 150], ['Foldable Shopping Bag', 'Photos/sop5.jpg', 120], ['Foldable Shopping Bag', 'Photos/sop6.jpg', 230], ['Canvas Shopping Bag', 'Photos/sop7.jpg', 110], ['Premium Tote Bag', 'Photos/sop8.jpg', 280], ['Travel Shopping Bag', 'Photos/sop9.jpg', 250], ['Premium Tote Bag', 'Photos/sop10.jpg', 240]];
+
+        function show(list, id) { document.getElementById(id).innerHTML = list.map(x => `<div class="col-md-3"><div class="card p-3 shadow"><img src="${x[1]}"><h5>${x[0]}</h5><p>Premium quality backpack</p><div class="price">$${x[2]}</div><button class="btn btn-success" onclick="openBuy('${x[0]}',${x[2]})">Buy Now</button></div></div>`).join('') }
+        show(casual, 'casualList'); show(travel, 'travelList'); show(school, 'schoolList'); show(party, 'partyList'); show(shopping, 'shoppingList');
+
+        function categoryCards(list, id) {
+            document.getElementById(id).innerHTML = list.map((name, i) => `
+                <div class="col-md-3">
+                <div class="card p-3 shadow h-100">
+                <img src="Photos/bag-${(i % 3) + 1}.png" class="card-img-top">
+                <h5>${name}</h5>
+                <p>Quality ${name} with durable material.</p>
+                <div class="price">$${50 + i * 5}</div>
+                <button class="btn btn-success" onclick="openBuy('${name}',${50 + i * 5})">Buy Now</button>
+                </div>
+            </div>`).join('');
+        }
+        categoryCards(categories.school, "schoolProducts");
+        categoryCards(categories.party, "partyProducts");
+        categoryCards(categories.shopping, "shoppingProducts");
+
+        function openBuy(name, price) { document.getElementById('productName').innerHTML = name + ' - $' + price; new bootstrap.Modal(document.getElementById('buyModal')).show() }
+    </script>
+</body>
+
+</html>
