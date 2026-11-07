@@ -116,17 +116,18 @@
                 <div class="col-md-6">
                     <div class="card p-3">
                         <h4 id="school">Contact</h4>
-                        <p> Head Office: 001, Dhaka, Bangladesh - 1000 </p>
+                        <p> Head Office: 2, Motijheel, Dhaka, Bangladesh - 1000 </p>
                         <p> +880 1700-000000 </p>
-                        <p> Local Office: House: 12, Road: 12, Sector: 10, Uttara, Dhaka-1200 </p>
-                        <p>+880 1700-000000</p>
+                        <p> Uttara Office: House: 12, Road: 12, Sector: 10, Uttara, Dhaka-1200 </p>
+                        <p> +880 1700-000000</p>
                         <p> Help line: +88005656 9090 </p>
-                        <p>+88005656 9090</p>
+                        <p> +88005656 9090</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card p-3">
-                        <h4 id="party">We Accepte</h4><img src="Photos/cod.jpg" alt="" srcset="">
+                        <h4 id="party">We Accept</h4>
+                        <img src="Photos/cod.jpg" alt="" srcset="">
                     </div>
                 </div>
             </div>
@@ -147,24 +148,43 @@
                     <h5>Complete Order</h5>
                 </div>
                 <div class="modal-body">
-                    <h6 id="productName"></h6>
-                    <label>Quantity</label><input id="qty" class="form-control" type="number" min="1" value="1">
-                    <label class="mt-2">Delivery Location</label>
-                    <select class="form-control">
-                        <option>Dhaka</option>
-                        <option>Chattogram</option>
-                        <option>Rajshahi</option>
-                        <option>Sylhet</option>
-                        <option>Khulna</option>
-                    </select>
-                    <label class="mt-2">Payment Method</label>
-                    <select class="form-control">
-                        <option>Cash on Delivery</option>
-                        <option>bKash</option>
-                        <option>Nagad</option>
-                        <option>Visa/Master Card</option>
-                    </select>
-                    <button class="btn btn-success mt-3 w-100">Confirm Payment</button>
+                    <div id="orderForm">
+                        <h6 id="productName"></h6>
+                        <label>Quantity</label><input id="qty" class="form-control" type="number" min="1" value="1">
+                        <label class="mt-2">Delivery Location</label>
+                        <select class="form-control">
+                            <option>Dhaka</option>
+                            <option>Chattogram</option>
+                            <option>Rajshahi</option>
+                            <option>Sylhet</option>
+                            <option>Khulna</option>
+                            <option>Barishal</option>
+                            <option>Rangpur</option>
+                            <option>Mymensingh</option>
+                            <option>Cumilla</option>
+                            <option>Others</option>
+                        </select>
+                        <label class="mt-2">Payment Method</label>
+                        <select class="form-control">
+                            <option>Cash on Delivery</option>
+                            <option>bKash</option>
+                            <option>Nagad</option>
+                            <option>Visa Card</option>
+                            <option>Master Card</option>
+                            <optgroup label="Bank Transfer">
+                                <option>Pubali Bank</option>
+                                <option>DBBL</option>
+                                <option>BRAC Bank</option>
+                                <option>City Bank</option>
+                                <option>HSBC</option>
+                            </optgroup>
+                        </select>
+                        <button type="button" class="btn btn-success mt-3 w-100" onclick="confirmPayment()">Confirm Payment</button>
+                    </div>
+                    <div id="orderConfirmation" class="d-none text-center">
+                        <h5>Thank you, Your order is Confirmed.</h5>
+                        <p id="orderTotal" class="price mb-0"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,21 +193,22 @@
     <footer class="text-center">
         <h3>BACKPACK MOON</h3>
         <p>Quality backpacks for every lifestyle.</p>
-        <p><a href="">Facebook</a> | <a href="">Instagram</a> | <a href="">YouTube</a> | <a href="">TikTok</a></p>
+        <p><a href="https://www.facebook.com" target="_blank">Facebook</a> | <a href="https://www.instagram.com" target="_blank">Instagram</a>
+             | <a href="https://www.youtube.com" target="_blank">YouTube</a> | <a href="https://www.tiktok.com" target="_blank">TikTok</a></p>
         <small>© 2026 Backpack Moon. All Rights Reserved.</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let casual = [
-            ['Daily Casual Bag', 'Photos/bag-9.jpg', 150], ['Daily Casual Bag', 'Photos/bag-7.jpg', 130], ['Daily Casual Bag', 'Photos/bag-8.jpg', 110],
-            ['Daily Casual Bag', 'Photos/bag-4.jpg', 80], ['Daily Casual Bag', 'Photos/bag-5.jpg', 120], ['Daily Casual Bag', 'Photos/bag-6.jpg', 70], ['Daily Casual Bag', 'Photos/bag-7.jpg', 130], ['Daily Casual Bag', 'Photos/bag-8.jpg', 110], ['Daily Casual Bag', 'Photos/bag-9.jpg', 150], ['Daily Casual Bag', 'Photos/bag-10.jpg', 190]];
+            ['Daily Casual Bag', 'Photos/bag-9.jpg', 1500], ['Daily Casual Bag', 'Photos/bag-7.jpg', 1300], ['Daily Casual Bag', 'Photos/bag-8.jpg', 1100],
+            ['Daily Casual Bag', 'Photos/bag-4.jpg', 800], ['Daily Casual Bag', 'Photos/bag-5.jpg', 1200], ['Daily Casual Bag', 'Photos/bag-6.jpg', 700], ['Daily Casual Bag', 'Photos/bag-7.jpg', 1300], ['Daily Casual Bag', 'Photos/bag-8.jpg', 1100], ['Daily Casual Bag', 'Photos/bag-9.jpg', 1500], ['Daily Casual Bag', 'Photos/bag-10.jpg', 1900]];
         let travel = [
-            ['Travel Sport', 'Photos/Travel-bag-5.jpg', 200], ['Explorer Bag', 'Photos/Travel-bag-2.png', 180], ['Hiking Trek Bag', 'Photos/Treavel-bag-3.png', 200],
-            ['Adventure Travel Bag', 'Photos/Travel-bag-4.jpg', 170], ['Travel Sport', 'Photos/Travel-bag-6.jpg', 200], ['Travel Sport', 'Photos/Travel-bag-5.jpg', 230], ['Travel Sport', 'Photos/Travel-bag-7.jpg', 110], ['Travel Sport', 'Photos/Travel-bag-8.jpg', 80], ['Travel Sport', 'Photos/Travel-bag-9.jpg', 250], ['Travel Sport', 'Photos/Travel-bag-10.jpg', 240]];
+            ['Travel Sport', 'Photos/Travel-bag-5.jpg', 2000], ['Explorer Bag', 'Photos/Travel-bag-2.png', 1800], ['Hiking Trek Bag', 'Photos/Treavel-bag-3.png', 2000],
+            ['Adventure Travel Bag', 'Photos/Travel-bag-4.jpg', 1700], ['Travel Sport', 'Photos/Travel-bag-6.jpg', 2000], ['Travel Sport', 'Photos/Travel-bag-5.jpg', 2300], ['Travel Sport', 'Photos/Travel-bag-7.jpg', 1100], ['Travel Sport', 'Photos/Travel-bag-8.jpg', 800], ['Travel Sport', 'Photos/Travel-bag-9.jpg', 2500], ['Travel Sport', 'Photos/Travel-bag-10.jpg', 2400]];
         let school = [
-            ['Student Classic', 'Photos/scbags1.png', 200], ['Kids Color Bag', 'Photos/scbags2.png', 180], ['Waterproof Student Bag', 'Photos/scbags3.jpg', 200],
-            ['Junior Backpack', 'Photos/scbags4.jpg', 170], ['Smart School Pack', 'Photos/scbag5.jpg', 200], ['Premium School Bag', 'Photos/scbag6.jpg', 230], ['Travel Sport', 'Photos/scbag7.jpg', 110], ['Premium School Bag', 'Photos/scbag8.jpg', 80], ['Waterproof Student Bag', 'Photos/scbag9.jpg', 250], ['Junior Backpack', 'Photos/scbag10.jpg', 240]];
+            ['Student Classic', 'Photos/scbags1.png', 2000], ['Kids Color Bag', 'Photos/scbags2.png', 1800], ['Waterproof Student Bag', 'Photos/scbags3.jpg', 2000],
+            ['Junior Backpack', 'Photos/scbags4.jpg', 1700], ['Smart School Pack', 'Photos/scbag5.jpg', 2100], ['Premium School Bag', 'Photos/scbag6.jpg', 2300], ['Travel Sport', 'Photos/scbag7.jpg', 1300], ['Premium School Bag', 'Photos/scbag8.jpg', 800], ['Waterproof Student Bag', 'Photos/scbag9.jpg', 2500], ['Junior Backpack', 'Photos/scbag10.jpg', 2400]];
         let party = [
             ['Elegant Party Bags', 'Photos/pb1.jpg', 1000], ['Fashion Clutch Bag', 'Photos/pb2.jpg', 1800], ['Evening Style Bag', 'Photos/pb3.jpg', 2200],
             ['Luxury Mini Bag', 'Photos/pb4.jpg', 1750], ['Classic Event Bag', 'Photos/pb5.jpg', 1200], ['Women Fashion Bag', 'Photos/pb6.jpg', 1230], ['Golden Party Bag', 'Photos/pb7.jpg', 1100], ['Modern Celebration Bag', 'Photos/pb8.jpg', 800], ['Designer Party Bag', 'Photos/pb9.jpg', 1250], ['Modern Celebration Bag', 'Photos/pb10.jpg', 2240]];
@@ -195,26 +216,30 @@
             ['Eco Shopping Bag', 'Photos/sop1.jpg', 100], ['Reusable Market Bag', 'Photos/sop2.jpg', 200], ['Evening Style Bag', 'Photos/sop3.jpg', 220],
             ['Luxury Mini Bag', 'Photos/sop4.jpg', 150], ['Foldable Shopping Bag', 'Photos/sop5.jpg', 120], ['Foldable Shopping Bag', 'Photos/sop6.jpg', 230], ['Canvas Shopping Bag', 'Photos/sop7.jpg', 110], ['Premium Tote Bag', 'Photos/sop8.jpg', 280], ['Travel Shopping Bag', 'Photos/sop9.jpg', 250], ['Premium Tote Bag', 'Photos/sop10.jpg', 240]];
 
-        function show(list, id) { document.getElementById(id).innerHTML = list.map(x => `<div class="col-md-3"><div class="card p-3 shadow"><img src="${x[1]}"><h5>${x[0]}</h5><p>Premium quality backpack</p><div class="price">$${x[2]}</div><button class="btn btn-success" onclick="openBuy('${x[0]}',${x[2]})">Buy Now</button></div></div>`).join('') }
+        function show(list, id) { document.getElementById(id).innerHTML = list.map(x => `<div class="col-md-3"><div class="card p-3 shadow"><img src="${x[1]}"><h5>${x[0]}</h5>
+            <p>Premium quality backpack</p><div class="price">৳${x[2]}</div><button class="btn btn-success" onclick="openBuy('${x[0]}',${x[2]})">Buy Now</button></div></div>`).join('') }
         show(casual, 'casualList'); show(travel, 'travelList'); show(school, 'schoolList'); show(party, 'partyList'); show(shopping, 'shoppingList');
 
-        function categoryCards(list, id) {
-            document.getElementById(id).innerHTML = list.map((name, i) => `
-                <div class="col-md-3">
-                <div class="card p-3 shadow h-100">
-                <img src="Photos/bag-${(i % 3) + 1}.png" class="card-img-top">
-                <h5>${name}</h5>
-                <p>Quality ${name} with durable material.</p>
-                <div class="price">$${50 + i * 5}</div>
-                <button class="btn btn-success" onclick="openBuy('${name}',${50 + i * 5})">Buy Now</button>
-                </div>
-            </div>`).join('');
-        }
-        categoryCards(categories.school, "schoolProducts");
-        categoryCards(categories.party, "partyProducts");
-        categoryCards(categories.shopping, "shoppingProducts");
+        let selectedProduct = '';
+        let selectedPrice = 0;
 
-        function openBuy(name, price) { document.getElementById('productName').innerHTML = name + ' - $' + price; new bootstrap.Modal(document.getElementById('buyModal')).show() }
+        function openBuy(name, price) {
+            selectedProduct = name;
+            selectedPrice = price;
+            document.getElementById('productName').innerHTML = name + ' - ৳' + price;
+            document.getElementById('qty').value = 1;
+            document.getElementById('orderForm').classList.remove('d-none');
+            document.getElementById('orderConfirmation').classList.add('d-none');
+            new bootstrap.Modal(document.getElementById('buyModal')).show();
+        }
+
+        function confirmPayment() {
+            const quantity = Math.max(1, parseInt(document.getElementById('qty').value, 10) || 1);
+            const total = selectedPrice * quantity;
+            document.getElementById('orderTotal').textContent = selectedProduct + ' - Total: ৳' + total;
+            document.getElementById('orderForm').classList.add('d-none');
+            document.getElementById('orderConfirmation').classList.remove('d-none');
+        }
     </script>
 </body>
 
